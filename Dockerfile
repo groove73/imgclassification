@@ -4,6 +4,9 @@ FROM python:3.11-slim
 # Set working directory
 WORKDIR /app
 
+# Ensure models directory exists
+RUN mkdir -p /app/app/models
+
 # Copy requirements file first to use it in the combined layer
 COPY requirements.txt .
 
