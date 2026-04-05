@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Image Classifier | 유사인물 추천</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="container">
+        <header>
+            <h1>Who Do I Look Like?</h1>
+            <p>나와 가장 닮은 연예인을 기계학습으로 찾아보세요.</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div id="drop-area" class="drop-area">
+                    <form class="my-form">
+                        <p>이곳에 이미지를 드래그하거나 클릭하여 업로드하세요 (JPG, PNG)</p>
+                        <input type="file" id="fileElem" accept="image/*" onchange="handleFiles(this.files)">
+                        <label class="button" for="fileElem">파일 선택</label>
+                    </form>
+                    <div id="gallery"></div>
+                </div>
+                
+                <div class="camera-section">
+                    <button id="camera-btn" class="secondary-button">실시간 카메라 사용</button>
+                    <div id="camera-container" class="hidden">
+                        <video id="video" autoplay playsinline></video>
+                        <canvas id="canvas" class="hidden"></canvas>
+                        <button id="capture-btn" class="capture-button">캡처</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>AI가 이미지를 분석 중입니다...</p>
+            </div>
+
+            <section id="results" class="results hidden">
+                <h2>분석 결과</h2>
+                <div id="result-list" class="result-cards">
+                    <!-- Results will be injected here -->
+                </div>
+                <button id="reset-btn" class="text-button">다시 시도하기</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Human Image Classifier | Powered by FaceNet SOTA</p>
+        </footer>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
