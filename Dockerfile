@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     libsm6 \
     libxext6 \
     libxrender-dev \
+    && pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt \
     # Clean up build dependencies to save space
     && apt-get purge -y --auto-remove build-essential \
