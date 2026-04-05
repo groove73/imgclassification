@@ -12,9 +12,9 @@ services:
     deploy:
       resources:
         reservations:
-          memory: 128M
+          memory: 64M
         limits:
-          memory: 256M
+          memory: 128M
     restart: always
 
 # Optional: Add Redis or DB if needed in the future
