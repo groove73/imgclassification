@@ -9,6 +9,12 @@ services:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+    deploy:
+      resources:
+        reservations:
+          memory: 128M
+        limits:
+          memory: 256M
     restart: always
 
 # Optional: Add Redis or DB if needed in the future
